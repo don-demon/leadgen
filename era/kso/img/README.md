@@ -1,2 +1,2 @@
 ## Images
-Images for index.html
+for index.html
