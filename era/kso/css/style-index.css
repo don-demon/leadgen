@@ -1,0 +1,267 @@
+:root {
+	--bg-color: #272627;
+	--bg-color-nav: #45464f;
+/*	--bg-color-nav: #383940;*/
+	--txt-color: #ffffff;
+	--green-color: #3dff3d;
+	--purple-color: #ff0084;
+}
+
+@font-face {
+    font-family: 'default';
+    src: url('../fonts/klukva/klukva_version_01-webfont.woff2') format('woff2'),
+         url('../fonts/klukva/klukva_version_01-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'nunitoblack';
+    src: url('../fonts/nunitoblack/ofont.ru_nunito-webfont.woff2') format('woff2'),
+         url('../fonts/nunitoblack/ofont.ru_nunito-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'comforta';
+    src: url('../fonts/comforta/Comfortaa-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	/*min-height: 100vh;*/
+	display: flex;
+	flex-direction: column;
+	gap: 6vh;
+
+	background-color: var(--bg-color);
+	/*background-image: url(../img/bg-default.jpg);*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: var(--txt-color);
+	font-family: 'default';
+	font-size: 4vh;
+
+}
+
+.Block {
+	height: 100vh;
+}
+
+
+
+#BlockZero {
+	background-image: url(../img/bg-red-gradient.jpg);;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	backdrop-filter: blur(20px);
+
+	display: flex;
+	flex-direction: column;
+}
+.KSOIcon {
+	height: 1.6em;
+	width: 4.8em;
+}
+nav {
+	background-color: var(--bg-color-nav);
+	/*height: 0.4em;
+	margin: 0.2em;*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.2em 0.4em 0.2em 0.2em;
+	height: 10vh;
+}
+
+.NavTxt {
+	font-size: 1.56em;
+}
+.NavTxt:hover {
+	animation: NavTxtHover 3s forwards;
+}
+
+
+.MMLines {
+	height: 0.22em;
+	width: 1.55em;
+	background-color: white;
+	border-radius: 36px;
+	transition: all 0.8s;
+}
+#MMLine1 {
+
+}
+#MMLine2 {
+	transition: all 0.8s;
+}
+#MMLine3 {
+
+}
+.MainMenu {
+	/*height: 2em;
+	width: 2em;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: all 1s;
+}
+.MainMenu:hover {
+	scale: 1.16;
+}
+#MMLine2:hover {
+	opacity: 0;
+}
+
+
+
+
+.BlockZero-MainDiv {
+	/*background-color: #00774477;
+	border-color: #229966FF;
+	border-style: solid;*/
+
+	margin-top: 5vh;
+
+	height: 85vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.BlockZero-MainDiv-MainTxt {
+	/*background-color: #99000099;*/
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	/*height: 100%;*/
+	width: 90%;
+}
+
+.BlockZero-MainDiv-Title {
+	font-size: 14vh;
+	/*transition-property: transform;
+	transition-duration: 3s;
+	transition-timing-function: ease;
+	transition-delay: 0.2s;*/
+
+	transition: all 1.2s 0.2s;
+}
+.BlockZero-MainDiv-SmallTitle {
+	font-size: 5vh;
+
+	transition: all 1.2s 0.2s;
+}
+.BlockZero-MainDiv-Desc {
+	font-family: 'comforta', 'nunitoblack', sans-serif;
+	opacity: 0;
+	font-size: 0%;
+
+	transition: all 1.2s 0.2s;
+}
+
+
+.BlockZero-MainDiv-MainTxt:hover .BlockZero-MainDiv-Title {
+	opacity: 1;
+	font-size: 18vh;
+	translate:0% -5vh;
+}
+.BlockZero-MainDiv-MainTxt:hover .BlockZero-MainDiv-Title ~ .BlockZero-MainDiv-SmallTitle {
+	opacity: 0;
+}
+.BlockZero-MainDiv-MainTxt:hover .BlockZero-MainDiv-Title ~ .BlockZero-MainDiv-Desc {
+	opacity: 1;
+	font-size: 80%;
+	translate:0% -2vh;
+	line-height: 1.6;
+}
+
+.BlockZero-MainDiv-Tip {
+	animation: blinking 3s infinite;
+	cursor: help;
+}
+
+@keyframes blinking {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+#BlockErrium {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#BlockErrium-TitleTxt {
+
+}
+
+#BlockErrium-Buttons {
+	display: flex;
+}
+
+
+
+
+
+
+
+.GlowBox {
+	height: 80px;
+	width: 300px;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(25px);
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+}
+.GlowBox::before {
+	content: '';
+	position: absolute;
+	top: var(--y);
+	left: var(--x);
+	width: 650px;
+	height: 650px;
+	transform: translate(-50%, -50%);
+	background: radial-gradient(var(--green-color), transparent, transparent);
+	opacity: 0;
+	transition: .5s, top 0s, left 0s;
+}
+.GlowBox:hover::before {
+	opacity: 1;
+}
+.GlowBox::after {
+	content: '';
+	position: absolute;
+	inset: 2px;
+	border-radius: 18px;
+	background: rgba(45, 45, 45, .75);
+}
+.GlowBox:active::after {
+	content: '';
+	position: absolute;
+	inset: 2.4px;
+	border-radius: 18px;
+	background: rgba(45, 50, 45, .65);
+}
